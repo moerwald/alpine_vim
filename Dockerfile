@@ -1,6 +1,7 @@
 FROM alpine:3.8
 
-RUN adduser -D -u 1000 moerwald
+RUN addgroup -g 1000 appuser && \
+    adduser -D -u 1000 -G appuser appuser
 
 RUN apk add --no-cache python3 && \
     apk add --no-cache vim && \
@@ -13,10 +14,10 @@ RUN cd /tmp \
  && cd /tmp/fonts \
  && ./install.sh
 
-COPY _vimrc /home/moerwald/.vimrc
-RUN dos2unix /home/moerwald/.vimrc
+COPY _vimrc /home/appuser/.vimrc
+RUN dos2unix /home/appuser/.vimrc
 RUN mkdir /data
 
-USER moerwald
+USER appuser 
 RUN curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 RUN vim +PlugInstall +qall
