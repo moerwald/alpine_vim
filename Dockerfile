@@ -25,8 +25,8 @@ RUN vim +PlugInstall +qall
 
 # On Windows continainer won't user appuser, when starting in LCOW mode -> container starts as root, and its not possible to "su" to appuser ...
 USER root
-RUN cp -r ~/.vim /root
-RUN cp -r ~/.vimrc /root
+RUN cp -r /home/appuser/.vim /root
+RUN cp -r /home/appuser/.vimrc /root
 USER appuser 
 ENTRYPOINT ["/bin/sh"]
 
