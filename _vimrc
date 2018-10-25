@@ -24,8 +24,10 @@ set noerrorbells
 syntax enable
 filetype plugin indent on
 set autoindent
-" Use spaces instead of tabs
+" Use spaces instead of tabs, 4 space for intendation
 set expandtab
+set shiftwidth=4
+set softtabstop=4
 " VIM will backup a non stored buffer
 set hidden
 set encoding=utf-8
