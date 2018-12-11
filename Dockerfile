@@ -8,7 +8,8 @@ RUN apk add --no-cache python3 && \
     apk add --no-cache git && \
     apk add --no-cache dos2unix && \
     apk add --no-cache sudo && \
-    apk add --no-cache curl
+    apk add --no-cache curl && \
+    apk add --no-cache libxml2-utils
 
 RUN cd /tmp \
  && git clone https://github.com/powerline/fonts.git \
