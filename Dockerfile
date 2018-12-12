@@ -9,12 +9,18 @@ RUN apk add --no-cache python3 && \
     apk add --no-cache dos2unix && \
     apk add --no-cache sudo && \
     apk add --no-cache curl && \
-    apk add --no-cache libxml2-utils
+    apk add --no-cache libxml2-utils && \
+    apk add --no-cache libxml2-dev
 
 RUN cd /tmp \
  && git clone https://github.com/powerline/fonts.git \
  && cd /tmp/fonts \
  && ./install.sh
+ 
+# Python stuff
+RUN pip3 install --no-cache-dir --upgrade pip \
+    pip3 install howdoi
+
 
 COPY _vimrc /home/appuser/.vimrc
 RUN dos2unix /home/appuser/.vimrc
