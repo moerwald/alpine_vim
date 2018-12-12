@@ -18,8 +18,8 @@ RUN cd /tmp \
  && ./install.sh
  
 # Python stuff
-RUN pip3 install --no-cache-dir --upgrade pip && \
-    pip3 install howdoi
+RUN pip3 install --no-cache-dir --upgrade pip 
+    #pip3 install howdoi
 
 
 COPY _vimrc /home/appuser/.vimrc
