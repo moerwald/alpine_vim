@@ -10,7 +10,8 @@ RUN apk add --no-cache python3 && \
     apk add --no-cache sudo && \
     apk add --no-cache curl && \
     apk add --no-cache libxml2-utils && \
-    apk add --no-cache libxml2-dev
+    apk add --no-cache libxml2-dev && \
+    apk add --no-cache neovim
 
 RUN cd /tmp \
  && git clone https://github.com/powerline/fonts.git \
