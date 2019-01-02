@@ -4,16 +4,19 @@ Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'OmniSharp/omnisharp-vim'
-Plug 'SirVer/ultisnips'
-Plug 'tpope/vim-dispatch'
-Plug 'Shougo/vimproc.vim'
 Plug 'dimasg/vim-mark'
 Plug 'pprovost/vim-ps1'
+Plug 'chrisbra/vim-commentary'
+Plug 'tpope/vim-surround'
 " Doesn't work in Docker
 "Plug 'rakr/vim-one'
 
 call plug#end()
+
+
+" Show red column at position 101
+set textwidth=100
+set colorcolumn+=1
 
 "set guifont=Source\ Code\ Pro\ for\ Powerline\ 20
 set guioptions=agit
@@ -24,22 +27,26 @@ set noerrorbells
 syntax enable
 filetype plugin indent on
 set autoindent
+
 " Use spaces instead of tabs, 4 space for intendation
 set expandtab
 set shiftwidth=4
 set softtabstop=4
+
 " VIM will backup a non stored buffer
 set hidden
 set encoding=utf-8
+
 " Highlight search
 set hlsearch
 set history=1000
+
 "line numbers
 set number
 set relativenumber
-
 set scrolloff=7
 
+" Shows tab based extension menu
 set wildmenu
 
 " Folding
@@ -48,7 +55,6 @@ set foldmethod=syntax
                 
 " Deactivate beeps -> http://vim.wikia.com/wiki/Disable_beeping
 set noeb vb t_vb=                
-
 
 " Undo options
 set undofile
@@ -82,10 +88,6 @@ set background=dark
 let g:airline_powerline_fonts = 1
 set t_Co=256
 
-
 " NERDTree bindings
 map <C-n> :NERDTreeToggle<cr>
 
-
-" OmniSharp won't work without this setting
-filetype plugin on
