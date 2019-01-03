@@ -15,8 +15,7 @@ call plug#end()
 
 
 " Show red column at position 101
-set textwidth=100
-set colorcolumn+=1
+set colorcolumn=101
 
 "set guifont=Source\ Code\ Pro\ for\ Powerline\ 20
 set guioptions=agit
